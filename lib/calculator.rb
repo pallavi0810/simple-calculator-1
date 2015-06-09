@@ -20,6 +20,10 @@ class Calculator
 		@value = @value / operand
  	end
 
+ 	def abs(operand = nil)
+ 		@value = @value.abs
+ 	end
+
  	def cancel(operand = nil)
  		@value = 0
  	end

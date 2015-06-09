@@ -50,6 +50,18 @@ describe Calculator do
 		end
 	end
 
+	context 'Absolute' do
+		it "should return 4 for Absolute 4" do
+			@calculator.add(4)
+			expect(@calculator.abs).to eq(4)
+		end
+
+		it "should return 4 for Absolute -4" do
+			@calculator.subtract(4)
+			expect(@calculator.abs).to eq(4)
+		end
+	end
+
 	context 'Cancel' do
 		it "should return 0" do
 			expect(@calculator.cancel).to eq(0)
