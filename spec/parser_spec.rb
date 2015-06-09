@@ -48,6 +48,10 @@ describe Parser do
 			expect(@parser.parse("cubert")).to be_instance_of(CubeRootCommand)
 		end
 
+		it "should return RepeatCommand object" do
+			expect(@parser.parse("repeat 2")).to be_instance_of(RepeatCommand)
+		end		
+
 	end
 
 end
