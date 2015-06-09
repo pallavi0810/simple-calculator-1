@@ -62,6 +62,13 @@ describe Calculator do
 		end
 	end
 
+	context 'Negative' do
+		it "should return -4 for Negative of 4" do
+			@calculator.add(4)
+			expect(@calculator.neg).to eq(-4)
+		end
+	end
+
 	context 'Cancel' do
 		it "should return 0" do
 			expect(@calculator.cancel).to eq(0)

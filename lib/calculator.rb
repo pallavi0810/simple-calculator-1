@@ -24,6 +24,14 @@ class Calculator
  		@value = @value.abs
  	end
 
+	def neg(operand = nil)
+ 		self.multiply(-1)
+ 	end
+
+ 	def sqr(operand = nil)
+ 		self.multiply(@value)
+ 	end
+
  	def cancel(operand = nil)
  		@value = 0
  	end
