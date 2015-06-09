@@ -32,6 +32,10 @@ class Calculator
  		self.multiply(@value)
  	end
 
+ 	def sqrt(operand = nil)
+ 		@value = Math.sqrt(@value)
+ 	end
+
  	def cancel(operand = nil)
  		@value = 0
  	end

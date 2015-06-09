@@ -69,6 +69,21 @@ describe Calculator do
 		end
 	end
 
+	context 'Square' do
+		it "should return 16 for square of 4" do
+			@calculator.add(4)
+			expect(@calculator.sqr).to eq(16)
+		end
+
+	context 'Square root' do
+		it "should return 2 for square of 4" do
+			@calculator.add(4)
+			expect(@calculator.sqrt).to eq(2)
+		end
+	end
+
+	end
+
 	context 'Cancel' do
 		it "should return 0" do
 			expect(@calculator.cancel).to eq(0)
