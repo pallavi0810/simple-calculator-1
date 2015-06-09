@@ -2,6 +2,7 @@
 class SubtractCommand < BasicCommand
 
 	def execute(receiver)
+		@@history << self
 		receiver.subtract(@arguments)
 	end
 

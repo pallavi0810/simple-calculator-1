@@ -31,6 +31,8 @@ class Parser
 			CubeCommand.new(argument)
 		elsif command_name == 'cubert' && argument.nil?
 			CubeRootCommand.new(argument)						
+		elsif command_name == 'repeat'
+			BasicCommand.new(nil, argument)
 		else
 			BasicCommand.new(nil, [])
 		end
