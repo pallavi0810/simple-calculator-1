@@ -40,6 +40,10 @@ class Calculator
  		@value = @value ** 3
  	end
 
+ 	def cubert(operand = nil)
+ 		@value = Math.cbrt(@value)
+ 	end
+
  	def cancel(operand = nil)
  		@value = 0
  	end

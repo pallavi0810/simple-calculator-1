@@ -19,6 +19,18 @@ class Parser
 			DivideCommand.new(argument)
 		elsif command_name == 'cancel' && argument.nil?
 			CancelCommand.new(argument)
+		elsif command_name == 'sqr' && argument.nil?
+			SquareCommand.new(argument)
+		elsif command_name == 'sqrt' && argument.nil?
+			SquareRootCommand.new(argument)
+		elsif command_name == 'abs' && argument.nil?
+			AbsoluteCommand.new(argument)
+		elsif command_name == 'neg' && argument.nil?
+			NegativeCommand.new(argument)
+		elsif command_name == 'cube' && argument.nil?
+			CubeCommand.new(argument)
+		elsif command_name == 'cubert' && argument.nil?
+			CubeRootCommand.new(argument)						
 		else
 			BasicCommand.new(nil, [])
 		end

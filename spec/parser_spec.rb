@@ -24,6 +24,30 @@ describe Parser do
 			expect(@parser.parse("cancel")).to be_instance_of(CancelCommand)
 		end
 
+		it "should return a absolute command" do
+			expect(@parser.parse("abs")).to be_instance_of(AbsoluteCommand)
+		end
+
+		it "should return a negative command" do
+			expect(@parser.parse("neg")).to be_instance_of(NegativeCommand)
+		end
+
+		it "should return a square command" do
+			expect(@parser.parse("sqr")).to be_instance_of(SquareCommand)
+		end
+
+		it "should return a square root command" do
+			expect(@parser.parse("sqrt")).to be_instance_of(SquareRootCommand)
+		end
+
+		it "should return a cube command" do
+			expect(@parser.parse("cube")).to be_instance_of(CubeCommand)
+		end
+
+		it "should return a cube root command" do
+			expect(@parser.parse("cubert")).to be_instance_of(CubeRootCommand)
+		end
+
 	end
 
 end
