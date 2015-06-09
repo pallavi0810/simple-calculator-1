@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require_relative '../lib/parser.rb'
+require_relative '../lib/calculator.rb'
+
+parser = Parser.new
+input = ""
+while input != 'exit' do 
+	print "\n>> "
+	input = gets.chomp
+	puts parser.parse(input)
+end
