@@ -2,7 +2,7 @@
 class NegativeCommand < BasicCommand
 
 	def execute(receiver)
-		receiver.negative(@arguments)
+		receiver.neg(@arguments)
 	end
 
 end

@@ -2,7 +2,7 @@
 class CubeRootCommand < BasicCommand
 
 	def execute(receiver)
-		receiver.cube_root(@arguments)
+		receiver.cubert(@arguments)
 	end
 
 end

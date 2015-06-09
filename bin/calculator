@@ -1,14 +1,6 @@
 #!/usr/bin/env ruby
 # JOB: Runs an infinite loop of calcluator
-require_relative 'calc.rb'
+require_relative '../lib/calc.rb'
 
-parser = Parser.new
-input = ""
-calculator = Calculator.new
-while input != 'exit' do 
-	print "\n>> "
-	input = gets.chomp
-	command = parser.parse(input)
-	puts command.execute(calculator)
-	# puts command.execute
-end
+calculator = CalculatorController.new
+calculator.start

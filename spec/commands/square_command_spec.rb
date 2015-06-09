@@ -8,7 +8,7 @@ describe SquareCommand do
 	describe "execute" do
 
 		it "should call the square method on the object with the arguments" do
-			expect(receiver).to receive(:square)
+			expect(receiver).to receive(:sqr)
 			square_command.execute(receiver)
 		end
 

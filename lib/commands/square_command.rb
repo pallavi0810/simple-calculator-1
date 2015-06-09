@@ -2,7 +2,7 @@
 class SquareCommand < BasicCommand
 
 	def execute(receiver)
-		receiver.square(@arguments)
+		receiver.sqr(@arguments)
 	end
 
 end

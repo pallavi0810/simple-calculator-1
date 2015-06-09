@@ -2,7 +2,7 @@
 class SquareRootCommand < BasicCommand
 
 	def execute(receiver)
-		receiver.square_root(@arguments)
+		receiver.sqrt(@arguments)
 	end
 
 end

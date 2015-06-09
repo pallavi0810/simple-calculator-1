@@ -1,4 +1,4 @@
 require 'simplecov'
 SimpleCov.start
 
-require_relative '../bin/calc'
+require_relative '../lib/calc'

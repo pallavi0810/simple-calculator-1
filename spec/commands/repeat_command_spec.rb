@@ -1,12 +1,9 @@
 require 'spec_helper'
 
-describe AddCommand do
-
-	# let(:receiver) { Object.new }
-	# let(:repeat_command) { RepeatCommand.new([]) }
+describe RepeatCommand do
 
 	describe "execute" do
-		it "should return repeat object" do
+		it "should repeat sequece of commands" do
 			calculator = Calculator.new 
 			add_command = AddCommand.new(6)
 			add_command.execute(calculator)
