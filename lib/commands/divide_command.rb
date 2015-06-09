@@ -1,7 +1,8 @@
+# JOB: Indirect to division operation
 class DivideCommand < BasicCommand
 
-	def execute
-		@receiver.divide(@arguments)
+	def execute(receiver)
+		receiver.divide(@arguments)
 	end
 
 end

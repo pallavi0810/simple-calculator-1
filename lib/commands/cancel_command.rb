@@ -1,6 +1,6 @@
 class CancelCommand < BasicCommand
 
-def execute
-	@receiver.cancel
-end	
+	def execute(receiver)
+		receiver.cancel
+	end	
 end

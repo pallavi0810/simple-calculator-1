@@ -1,11 +1,11 @@
+# JOB: Base class for all the calculator command
 class BasicCommand
 
-	def initialize(receiver, arguments)
-		@receiver = receiver
+	def initialize(arguments)
 		@arguments = arguments
 	end
 
-	def execute
+	def execute(receiver)
 		raise
 	end
 
