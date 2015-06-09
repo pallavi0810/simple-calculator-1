@@ -82,6 +82,13 @@ describe Calculator do
 		end
 	end
 
+	context 'cube' do
+		it "should return 64 for cube of 4" do
+			@calculator.add(4)
+			expect(@calculator.cube).to eq(64)
+		end
+	end
+
 	end
 
 	context 'Cancel' do

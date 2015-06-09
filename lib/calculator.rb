@@ -36,6 +36,10 @@ class Calculator
  		@value = Math.sqrt(@value)
  	end
 
+ 	def cube(operand = nil)
+ 		@value = @value ** 3
+ 	end
+
  	def cancel(operand = nil)
  		@value = 0
  	end
