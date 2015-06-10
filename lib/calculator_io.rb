@@ -1,5 +1,5 @@
 #Is user interface for the Calculator
-class CaluclatorIO
+class CalculatorIO
 	
 	def get_input
 		gets.chomp
@@ -8,5 +8,5 @@ class CaluclatorIO
 	def return_output(output)
 		puts output
 	end
-	
+
 end
