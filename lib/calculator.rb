@@ -2,6 +2,7 @@
 class Calculator
 	def initialize
 		@value = 0
+		@history = []
 	end
 
 	def add(operand)
@@ -46,5 +47,10 @@ class Calculator
 
  	def cancel(operand = nil)
  		@value = 0
+ 	end
+
+ 	def operate(command)
+ 		command.execute(self)
+ 		@history << command
  	end
 end

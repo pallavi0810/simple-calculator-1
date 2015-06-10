@@ -102,4 +102,17 @@ describe Calculator do
 			expect(@calculator.cancel).to eq(0)
 		end
 	end
+
+	context 'Command' do
+		it 'execute the command' do
+			add_command = AddCommand.new(5)
+			expect(@calculator.operate(add_command)).to eq([add_command])
+		end
+		it 'execute the more than one command' do
+			add_command = AddCommand.new(5)
+			@calculator.operate(add_command)
+			subtract_command = SubtractCommand.new(3)
+			expect(@calculator.operate(subtract_command)).to eq([add_command,subtract_command])
+		end
+	end
 end
