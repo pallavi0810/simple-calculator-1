@@ -50,8 +50,8 @@ class Calculator
  	end
 
  	def operate(command)
- 		command.execute(self)
  		add_to_history(command)
+ 		command.execute(self)
  	end
 
  	def add_to_history(command)

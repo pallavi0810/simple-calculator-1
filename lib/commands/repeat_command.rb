@@ -2,9 +2,7 @@
 class RepeatCommand < BasicCommand
 
 	def execute(receiver)
-		value = nil
-		@@history.last(@arguments).each{ |command| value = command.execute(receiver) }
-		value
+		receiver.repeat(@arguments)
 	end
 	
 end
