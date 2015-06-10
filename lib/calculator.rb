@@ -51,6 +51,19 @@ class Calculator
 
  	def operate(command)
  		command.execute(self)
- 		@history << command
+ 		add_to_history(command)
  	end
+
+ 	def add_to_history(command)
+ 		if command.class != RepeatCommand
+ 			@history << command
+ 		end
+ 	end
+
+ 	def repeat(operand)
+ 		value = 0
+ 		@history.last(operand).each{ |command| value = command.execute(self) }
+ 		value
+ 	end
+
 end

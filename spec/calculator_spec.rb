@@ -108,6 +108,7 @@ describe Calculator do
 			add_command = AddCommand.new(5)
 			expect(@calculator.operate(add_command)).to eq([add_command])
 		end
+
 		it 'execute the more than one command' do
 			add_command = AddCommand.new(5)
 			@calculator.operate(add_command)
@@ -115,4 +116,15 @@ describe Calculator do
 			expect(@calculator.operate(subtract_command)).to eq([add_command,subtract_command])
 		end
 	end
+
+	context 'Repeat' do
+		it "should repeat the last 2 commands given repeat(2)" do
+			add_command = AddCommand.new(5)
+			@calculator.operate(add_command)
+			subtract_command = SubtractCommand.new(3)
+			@calculator.operate(subtract_command)
+			expect(@calculator.repeat(2)).to eq(4)
+		end
+	end
+
 end

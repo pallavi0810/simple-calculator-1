@@ -14,7 +14,7 @@ class CalculatorController
 				break
 			end
 			command =  @parser.parse(input)
-			output = command.execute(@calculator)
+			output = @calculator.operate(command)
 			@calculator_io.return_output(output)
 		end
 	end
