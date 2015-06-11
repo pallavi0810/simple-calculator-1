@@ -50,6 +50,10 @@ describe Parser do
 
 		it "should return RepeatCommand object" do
 			expect(@parser.parse("repeat 2")).to be_instance_of(RepeatCommand)
+		end
+
+		it "should return InvalidCommand object" do
+			expect(@parser.parse("repeat")).to be_instance_of(InvalidCommand)
 		end		
 
 	end

@@ -9,32 +9,50 @@ class Parser
 		command_array = string.split
 		command_name = command_array[0]
 		argument = command_array[1]
-		if command_name == "add"
-			AddCommand.new(argument.to_f)
-		elsif command_name == 'subtract'
-			SubtractCommand.new(argument.to_f)
-		elsif command_name == 'multiply'
-			MultiplyCommand.new(argument.to_f)
-		elsif command_name == 'divide'
-			DivideCommand.new(argument.to_f)
-		elsif command_name == 'cancel' && argument.nil?
-			CancelCommand.new(argument)
-		elsif command_name == 'sqr' && argument.nil?
-			SquareCommand.new(argument)
-		elsif command_name == 'sqrt' && argument.nil?
-			SquareRootCommand.new(argument)
-		elsif command_name == 'abs' && argument.nil?
-			AbsoluteCommand.new(argument)
-		elsif command_name == 'neg' && argument.nil?
-			NegativeCommand.new(argument)
-		elsif command_name == 'cube' && argument.nil?
-			CubeCommand.new(argument)
-		elsif command_name == 'cubert' && argument.nil?
-			CubeRootCommand.new(argument)						
-		elsif command_name == 'repeat'
-			RepeatCommand.new(argument.to_i)
+		if argument.nil?
+			parse_unary(command_name)
 		else
-			BasicCommand.new(nil, [])
+			parse_binary(command_name,argument)
 		end
 	end
+
+	def parse_binary(command_name,argument)
+		return InvalidCommand.new([]) if argument.match(/\A[+-]?\d+?(_?\d+)*(\.\d+e?\d*)?\Z/) == nil
+		case command_name 
+		when 'add'
+			AddCommand.new(argument.to_f)
+		when 'subtract'
+			SubtractCommand.new(argument.to_f)
+		when 'multiply'
+			MultiplyCommand.new(argument.to_f)
+		when 'divide'
+			DivideCommand.new(argument.to_f)
+		when 'repeat'
+			RepeatCommand.new(argument.to_i)
+		else
+			InvalidCommand.new([])
+		end
+	end
+
+	def parse_unary(command_name)
+		case command_name
+		when 'cancel' 
+			CancelCommand.new([])
+		when  'sqr' 
+			SquareCommand.new([])
+		when  'sqrt' 
+			SquareRootCommand.new([])
+		when  'abs' 
+			AbsoluteCommand.new([])
+		when  'neg' 
+			NegativeCommand.new([])
+		when  'cube' 
+			CubeCommand.new([])
+		when  'cubert' 
+			CubeRootCommand.new([])						
+		else
+			InvalidCommand.new([])
+		end
+	end
+
 end

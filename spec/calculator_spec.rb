@@ -103,17 +103,19 @@ describe Calculator do
 		end
 	end
 
-	context 'Command' do
-		it 'execute the command' do
+	context 'Operate' do
+		it 'should execute the command' do
 			add_command = AddCommand.new(5)
-			expect(@calculator.operate(add_command)).to eq([add_command])
+			expect(@calculator.operate(add_command)).to eq(5)
 		end
+	end
 
-		it 'execute the more than one command' do
+	context 'Add to History' do
+		it 'should be able to add commands to its history' do
 			add_command = AddCommand.new(5)
-			@calculator.operate(add_command)
+			@calculator.add_to_history(add_command)
 			subtract_command = SubtractCommand.new(3)
-			expect(@calculator.operate(subtract_command)).to eq([add_command,subtract_command])
+			expect(@calculator.add_to_history(subtract_command)).to eq([add_command,subtract_command])
 		end
 	end
 

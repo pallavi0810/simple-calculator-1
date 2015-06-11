@@ -2,7 +2,7 @@
 class Calculator
 	def initialize
 		@value = 0
-		@history = []
+		@history = History.new
 	end
 
 	def add(operand)
@@ -50,19 +50,20 @@ class Calculator
  	end
 
  	def operate(command)
- 		add_to_history(command)
- 		command.execute(self)
+ 		result = command.execute(self)
+ 		add_to_history(command) if result
+ 		result
  	end
 
  	def add_to_history(command)
  		if command.class != RepeatCommand
- 			@history << command
+ 			@history.add(command)
  		end
  	end
 
  	def repeat(operand)
  		value = 0
- 		@history.last(operand).each{ |command| value = command.execute(self) }
+ 		@history.show(operand).each{ |command| value = command.execute(self) }
  		value
  	end
 
