@@ -1,10 +1,7 @@
-# convert input string to arithmetic operation 
+# convert input string to command 
 class Parser
 	#ALLOWED_TOKENS = ["add", "subtract", "multiply", "divide", "cancel"]
-	# def initialize
-	# 	@calculator = Calculator.new
-	# end
-
+	
 	def parse(string)
 		command_array = string.split
 		command_name = command_array[0]
@@ -50,6 +47,8 @@ class Parser
 			CubeCommand.new([])
 		when  'cubert' 
 			CubeRootCommand.new([])						
+		when  'exit' 
+			ExitCommand.new([])						
 		else
 			InvalidCommand.new([])
 		end

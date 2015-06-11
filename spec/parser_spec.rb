@@ -54,6 +54,10 @@ describe Parser do
 
 		it "should return InvalidCommand object" do
 			expect(@parser.parse("repeat")).to be_instance_of(InvalidCommand)
+		end
+
+		it "should return ExitCommand object" do
+			expect(@parser.parse("exit")).to be_instance_of(ExitCommand)
 		end		
 
 	end

@@ -10,10 +10,10 @@ class CalculatorController
 	def start
 		while true do 
 			input = @calculator_io.get_input
-			if(input == 'exit')
+			command =  @parser.parse(input)
+			if(command.class == ExitCommand)
 				break
 			end
-			command =  @parser.parse(input)
 			output = @calculator.operate(command)
 			@calculator_io.return_output(output)
 		end
