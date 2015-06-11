@@ -51,16 +51,17 @@ class Calculator
 
  	def operate(command)
  		result = command.execute(self)
- 		add_to_history(command) if result
+ 		add_to_history(command)
  		result
  	end
 
  	def add_to_history(command)
- 		if command.class != RepeatCommand
+ 		excluded_commands = [InvalidCommand,RepeatCommand]
+ 		unless excluded_commands.include? command.class
  			@history.add(command)
  		end
  	end
-
+ 	
  	def repeat(operand)
  		value = 0
  		@history.show(operand).each{ |command| value = command.execute(self) }

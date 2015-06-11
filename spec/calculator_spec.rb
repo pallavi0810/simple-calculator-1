@@ -117,6 +117,14 @@ describe Calculator do
 			subtract_command = SubtractCommand.new(3)
 			expect(@calculator.add_to_history(subtract_command)).to eq([add_command,subtract_command])
 		end
+
+		it 'should be not able to add invalid commands or repeat commands to its history' do
+			invalid_command = InvalidCommand.new([])
+			@calculator.add_to_history(invalid_command)
+			repeat_command = RepeatCommand.new([])
+			expect(@calculator.add_to_history(repeat_command)).to eq(nil)
+		end
+
 	end
 
 	context 'Repeat' do
