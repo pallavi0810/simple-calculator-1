@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-# JOB: Runs an infinite loop of calcluator
 require_relative '../lib/calc.rb'
 
 calculator = CalculatorController.new
